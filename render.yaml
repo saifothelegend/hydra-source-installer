@@ -2,6 +2,6 @@ services:
   - type: web
     name: hydra-source-installer
     runtime: static
-    buildCommand: "echo 'No build step required'"
+    buildCommand: "node sync-library.js"
     staticPublishPath: .
     autoDeployTrigger: commit
