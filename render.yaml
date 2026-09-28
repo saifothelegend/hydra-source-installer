@@ -2,6 +2,6 @@ services:
   - type: web
     name: hydra-source-installer
     runtime: static
-    buildCommand: ""
+    buildCommand: "echo 'No build step required'"
     staticPublishPath: .
     autoDeployTrigger: commit
