@@ -43,6 +43,13 @@ function render() {
 
   list.innerHTML = "";
   empty.hidden = filtered.length !== 0;
+  if (sources.length > 0 && filtered.length === 0) {
+    empty.querySelector("strong").textContent = "No sources match your search or category.";
+    empty.querySelector("span").textContent = "Try another search or category.";
+  } else if (sources.length === 0) {
+    empty.querySelector("strong").textContent = "No source entries are configured yet.";
+    empty.querySelector("span").textContent = "Add authorized source URLs to sources.js, or browse the Hydra Library catalog.";
+  }
 
   filtered.forEach((source, index) => {
     const row = document.createElement("article");
