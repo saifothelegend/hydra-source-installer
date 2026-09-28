@@ -40,3 +40,6 @@
   padding: 3px 7px;
   border-radius: 999px;
 }
+
+
+.empty{display:flex;flex-direction:column;align-items:center;gap:10px}.empty strong{color:#dfe2e7}.library-link{display:inline-block;text-decoration:none;margin-top:4px}
