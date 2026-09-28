@@ -11,14 +11,14 @@
   <main class="shell">
     <header class="hero">
       <div class="brand"><div class="logo">H</div><div><p class="eyebrow">COMMUNITY TOOL</p><h1>Hydra Source Installer</h1></div></div>
-      <p class="subtitle">Browse sources first, then search or open an authorized source in Hydra Launcher.</p>
+      <p class="subtitle">Browse the live Hydra Library catalog, search sources, and open their Library pages.</p>
       <div class="notice">Unofficial tool — it does not modify Hydra's files or impersonate Hydra.</div>
     </header>
 
     <section class="toolbar">
       <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Search sources..." autocomplete="off"></label>
       <button id="selectAll" class="button secondary">Select all</button>
-      <button id="installSelected" class="button primary">Open selected in Hydra</button>
+      <button id="installSelected" class="button primary">Open selected in Library</button>
     </section>
 
     <nav class="categories" aria-label="Source categories">
@@ -32,10 +32,7 @@
     <section id="sourceList" class="source-list" aria-live="polite"></section>
     <div id="empty" class="empty" hidden><strong>No source entries are configured yet.</strong><span>Add authorized source URLs to <code>sources.js</code>, or browse the Hydra Library catalog.</span><a class="button secondary library-link" href="https://library.hydra.wiki/sources/" target="_blank" rel="noopener">Browse Hydra Library</a></div>
 
-    <section class="custom">
-      <div><p class="eyebrow">CUSTOM SOURCE</p><h2>Have a source URL?</h2><p>Paste an authorized Hydra download-source URL and open it in Hydra.</p></div>
-      <div class="custom-row"><input id="customUrl" type="url" placeholder="https://example.com/source.json"><button id="customInstall" class="button primary">Open in Hydra</button></div>
-    </section>
+    <section class="custom"><div><p class="eyebrow">LIVE CATALOG</p><h2>Hydra Library sync</h2><p>The catalog is synchronized from the public Hydra Library during each Render deployment. Source details and install controls remain on the Library.</p></div><a class="button primary library-link" href="https://library.hydra.wiki/sources/" target="_blank" rel="noopener">Open Hydra Library</a></section>
 
     <footer><span>Hydra Source Installer</span><span>Use only sources you are authorized to access.</span></footer>
   </main>
