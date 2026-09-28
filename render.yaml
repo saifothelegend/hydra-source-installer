@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: hydra-source-installer
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    autoDeployTrigger: commit
