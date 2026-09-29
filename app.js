@@ -41,12 +41,20 @@ function render() {
       '<div class="source-main"><div class="source-heading"><p class="source-name">' + escapeHtml(source.name || "Unnamed source") + '</p>' +
       '<span class="source-badge">' + escapeHtml(source.status || "Unknown") + '</span></div>' +
       '<p class="source-url" title="' + escapeHtml(source.libraryUrl || "") + '">' + escapeHtml(source.description || "") + '</p></div>' +
-      '<a class="button secondary install" href="' + escapeHtml(source.libraryUrl || "#") + '" target="_blank" rel="noopener">View in Library</a>';
+      '<button class="button primary install" data-install-url="' + escapeHtml(source.libraryUrl || "") + '">Install to Hydra</button>';
     list.appendChild(row);
   });
 }
 
 search.addEventListener("input", render);
+
+list.addEventListener("click", event => {
+  const button = event.target.closest(".install");
+  if (!button) return;
+  const url = button.dataset.installUrl;
+  if (!url) return;
+  window.location.href = "hydralauncher://install-source?url=" + encodeURIComponent(url);
+});
 
 document.querySelectorAll(".category").forEach(button => {
   button.addEventListener("click", () => {
@@ -63,7 +71,9 @@ document.getElementById("selectAll").addEventListener("click", () => {
 document.getElementById("installSelected").addEventListener("click", () => {
   const selected = [...list.querySelectorAll(".check:checked")].map(c => c.dataset.libraryUrl).filter(Boolean);
   if (!selected.length) { alert("Select at least one source."); return; }
-  selected.forEach((url, i) => setTimeout(() => window.open(url, "_blank", "noopener"), i * 250));
+  selected.forEach((url, i) => setTimeout(() => {
+    window.location.href = "hydralauncher://install-source?url=" + encodeURIComponent(url);
+  }, i * 250));
 });
 
 render();
