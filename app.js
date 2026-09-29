@@ -1,4 +1,6 @@
-const sources = Array.isArray(window.HYDRA_SOURCES) ? window.HYDRA_SOURCES : [];
+const librarySources = Array.isArray(window.HYDRA_SOURCES) ? window.HYDRA_SOURCES : [];
+const customSources = Array.isArray(window.HYDRA_CUSTOM_SOURCES) ? window.HYDRA_CUSTOM_SOURCES : [];
+const sources = [...librarySources, ...customSources];
 const list = document.getElementById("sourceList");
 const empty = document.getElementById("empty");
 const search = document.getElementById("search");
