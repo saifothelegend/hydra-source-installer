@@ -26,8 +26,8 @@ function render() {
   empty.hidden = filtered.length !== 0;
 
   if (!sources.length) {
-    empty.querySelector("strong").textContent = "Hydra Library sync returned no sources.";
-    empty.querySelector("span").textContent = "Try rebuilding the site or open the Hydra Library directly.";
+    empty.querySelector("strong").textContent = "Search for a source";
+    empty.querySelector("span").textContent = "Type a source name above to see matching results.";
   } else if (!filtered.length) {
     empty.querySelector("strong").textContent = "No sources match your search or category.";
     empty.querySelector("span").textContent = "Try another search or category.";
